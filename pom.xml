@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.study</groupId>
-    <artifactId>flinkdemo1</artifactId>
+    <artifactId>FlinkExample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>FlinkExample</name>
     <description>Demo project for Spring Boot</description>
@@ -33,6 +33,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>1.6.1</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_2.11</artifactId>
+            <version>1.6.1</version>
+            <!--<scope>provided</scope>-->
         </dependency>
     </dependencies>
 
