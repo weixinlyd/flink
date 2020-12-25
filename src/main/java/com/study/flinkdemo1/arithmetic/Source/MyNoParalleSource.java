@@ -1,4 +1,4 @@
-package com.study.flinkdemo1.arithmetic;
+package com.study.flinkdemo1.arithmetic.Source;
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
 

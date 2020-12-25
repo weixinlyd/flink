@@ -1,8 +1,14 @@
-package com.study.flinkdemo1.arithmetic;
+package com.study.flinkdemo1.arithmetic.Source;
 
 
+import com.study.flinkdemo1.demoDto.AClass;
 import org.apache.flink.configuration.Configuration;
+import org.apache.flink.shaded.curator.org.apache.curator.shaded.com.google.common.collect.Lists;
 import org.apache.flink.streaming.api.functions.source.RichParallelSourceFunction;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 /**
@@ -48,4 +54,5 @@ public class MyRichParalleSource extends RichParallelSourceFunction<Long> {
     public void close() throws Exception{
         super.close();
     }
+
 }

@@ -1,4 +1,4 @@
-package com.study.flinkdemo1.arithmetic;
+package com.study.flinkdemo1.arithmetic.stream;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.utils.ParameterTool;
@@ -16,16 +16,17 @@ public class SocketWindowWordCountJava {
     public static void main(String[] args) throws Exception {
         //获取需要的端口号
         int port;
-        try{
-            ParameterTool parameterTool = ParameterTool.fromArgs(args);
-            port = parameterTool.getInt("port");
-        }catch (Exception e){
-            System.err.println("No port set.use default port 9000--java");
-            port = 8081;
-        }
+//        try{
+//            ParameterTool parameterTool = ParameterTool.fromArgs(args);
+//            port = parameterTool.getInt("port");
+//        }catch (Exception e){
+//            System.err.println("No port set.use default port 9000--java");
+//            port = 8081;
+//        }
+        port = 9000;
         //获取Flink的运行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        String hostname = "k8s-master01";
+        String hostname = "111.229.243.85";
         String delimiter = "\n";
         //连接Socket获取输入的数据
         DataStreamSource<String> text = env.socketTextStream(hostname,port,delimiter);
@@ -54,6 +55,7 @@ public class SocketWindowWordCountJava {
         windowCounts.print().setParallelism(1);
         //这一行代码一定要实现,否则程序不执行
         env.execute("Socket window count");
+        System.out.println("env运行成功！！！！！！！！！！！！！！！！！");
     }
 
     public static class WordWithCount{

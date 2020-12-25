@@ -1,6 +1,5 @@
-package com.study.flinkdemo1.arithmetic;
+package com.study.flinkdemo1.arithmetic.batch;
 
-import ch.qos.logback.core.subst.Tokenizer;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
